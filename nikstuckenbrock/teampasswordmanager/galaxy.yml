@@ -1,0 +1,17 @@
+namespace: nikstuckenbrock
+name: teampasswordmanager
+version: 0.1.0
+readme: README.md
+authors:
+- Nik Stuckenbrock
+description: Collection of modules regarding the TeamPasswordManager
+license:
+- GPL-2.0-or-later
+license_file: ''
+tags: []
+dependencies: {}
+repository: https://github.com/nikstuckenbrock/ansible
+documentation: https://github.com/nikstuckenbrock/ansible
+homepage: https://github.com/nikstuckenbrock/ansible
+issues: https://github.com/nikstuckenbrock/ansible/issues
+build_ignore: []
