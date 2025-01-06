@@ -107,10 +107,14 @@ def run_module() -> None:
     for argument in module_args.keys():
         if argument in fields:
             data[argument] = module.params[argument]
-            
-    api.create_password(
-        data=data
-    )
+    
+    try:
+        api.create_password(
+            data=data
+        )
+    except tpm.TPMException as tpm_error:
+        result['message'] = str(tpm_error)
+        return
     
     result['message'] = 'created'
     
