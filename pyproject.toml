@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ansible>=11.1.0",
+    "ruff>=0.8.6",
     "tpm>=4.2",
 ]
