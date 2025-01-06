@@ -4,8 +4,8 @@ from ansible.module_utils.basic import AnsibleModule
 DOCUMENTATION = r'''
 ---
 module: teampasswordmanager_password_create
-short_description: This is my test module
-version_added: "1.0.0"
+short_description: Create new passwords.
+version_added: "0.1.0"
 description: Create new passwords in the TeamPasswordManager.
 options:
     url:
