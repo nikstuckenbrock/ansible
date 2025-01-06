@@ -4,4 +4,7 @@ version = "0.1.0"
 description = "My personal ansible collection"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "ansible>=11.1.0",
+    "tpm>=4.2",
+]
