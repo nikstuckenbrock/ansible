@@ -1,6 +1,64 @@
 import tpm
 from ansible.module_utils.basic import AnsibleModule
 
+DOCUMENTATION = r'''
+---
+module: teampasswordmanager_password_create
+short_description: This is my test module
+version_added: "1.0.0"
+description: Create new passwords in the TeamPasswordManager.
+options:
+    url:
+        type: str
+        required: true
+    private_key:
+        type: str
+        required: true
+    public_key:
+        type: str
+        required: true
+    name:
+        type: str
+        required: true
+    project_id:
+        type: int
+        required: true
+    tags:
+        type: str
+        required: false
+    username:
+        type: str
+        required: false
+    email:
+        type: str
+        required: false
+    password:
+        type: str
+        required: false
+    notes:
+        type: str
+        required: false
+author:
+    - Nik Stuckenbrock (@nikstuckenbrock)
+'''
+
+EXAMPLES = r'''
+# Create a new password
+- name: Test with a message
+  nikstuckenbrock.teampasswordmanager.teampasswordmanager_password_create.py:
+    url: https://example.com
+    private_key: 0123456789
+    public_key: 0123456789
+'''
+
+RETURNS = r'''
+message:
+    description: The output message if a password was created.
+    type: str
+    returned: always
+    sample: 'created'
+'''
+
 fields: list[str] = [
     "name",
     "project_id",
@@ -53,6 +111,8 @@ def run_module() -> None:
     api.create_password(
         data=data
     )
+    
+    result['message'] = 'created'
     
 def main():
     run_module()
