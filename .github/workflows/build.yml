@@ -1,0 +1,17 @@
+---
+name: Deploy collection
+
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build collection
+        uses: artis3n/ansible_galaxy_collection@v2
+        with:
+          api_key: '${{ secrets.GALAXY_API_KEY }}'
+          collection_dir: 'nstuckenbrock/teampasswordmanager'
+          publish: false
