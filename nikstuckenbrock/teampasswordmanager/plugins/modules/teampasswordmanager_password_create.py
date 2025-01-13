@@ -115,9 +115,10 @@ def run_module() -> None:
     except tpm.TPMException as tpm_error:
         result['message'] = str(tpm_error)
         return
-    
+
     result['message'] = 'created'
-    
+    module.exit_json(**result)
+
 def main():
     run_module()
 
